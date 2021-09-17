@@ -13,4 +13,13 @@ function createGrid() {
     }
 }
 
+function draw() {
+    const cells = Array.from(container.children);
+    cells.forEach(cell => {
+        cell.addEventListener('mouseover', () => {
+            cell.style.backgroundColor = "#000";
+        })
+    })
+}
+
 createGrid();
