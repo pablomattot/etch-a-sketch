@@ -26,7 +26,8 @@ main {
     gap: 2em;
 }
 
-button {
+button,
+input {
     border: 1px solid #556DC8;
     border-radius: 5px;
     padding: 1em 2em;
@@ -46,6 +47,8 @@ button:hover {
     display: grid;
     border-right: 1px solid #556DC8;
     border-bottom: 1px solid #556DC8;
+    height: 600px;
+    width: 600px;
 }
 
 .cell {

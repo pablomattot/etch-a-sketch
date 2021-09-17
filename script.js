@@ -1,16 +1,25 @@
 const container = document.querySelector(".container");
-const cellSize = 24;
-const gridSize = 16;
+const gridSize = 32;
 const color = "000";
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener('click', clearGrid);
 
-function createGrid() {
-    container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
-    container.style.gridTemplateRows = `repeat(${gridSize}, ${cellSize}px)`;
+// function createGrid() {
+//     container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
+//     container.style.gridTemplateRows = `repeat(${gridSize}, ${cellSize}px)`;
 
+//     for (let i = 0; i < gridSize ** 2; i++) {
+//         const cell = document.createElement("div");
+//         cell.classList.add("cell");
+//         container.appendChild(cell);
+//     }
+// }
+
+function createGrid() {
     for (let i = 0; i < gridSize ** 2; i++) {
-        const cell = document.createElement("div");
+        const cell = document.createElement('div');
+        container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
         cell.classList.add("cell");
         container.appendChild(cell);
     }
