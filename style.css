@@ -3,13 +3,20 @@
     padding: 0;
 }
 
-.container {
+main {
     display: flex;
-    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    border-right: 1px solid #232323;
+    border-bottom: 1px solid #232323;
 }
 
 .cell {
-    border: 1px solid #000;
-    width: 15px;
-    height: 15px;
+    border-top: 1px solid #232323;
+    border-left: 1px solid #232323;
 }

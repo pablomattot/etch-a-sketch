@@ -1,5 +1,16 @@
 const container = document.querySelector(".container");
+const cellSize = 24;
+const gridSize = 16;
 
-for (let i = 0; i < 256; i++) {
-    container.innerHTML += `<div class="cell"></div>`;
+function createGrid() {
+    container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
+    container.style.gridTemplateRows = `repeat(${gridSize}, ${cellSize}px)`;
+
+    for (let i = 0; i < gridSize ** 2; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        container.appendChild(cell);
+    }
 }
+
+createGrid();
