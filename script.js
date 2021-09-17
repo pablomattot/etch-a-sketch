@@ -1,21 +1,14 @@
 const container = document.querySelector(".container");
 const rangeVal = document.querySelector("#size");
+const rangeInd = document.querySelector("#rangeIndicator");
 let gridSize = 24;
 const color = "000";
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener('click', clearGrid);
 
-// function createGrid() {
-//     container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
-//     container.style.gridTemplateRows = `repeat(${gridSize}, ${cellSize}px)`;
-
-//     for (let i = 0; i < gridSize ** 2; i++) {
-//         const cell = document.createElement("div");
-//         cell.classList.add("cell");
-//         container.appendChild(cell);
-//     }
-// }
-
+rangeVal.addEventListener('mousemove', () => {
+    rangeInd.textContent = `${rangeVal.value} X ${rangeVal.value}`;
+})
 rangeVal.addEventListener('mouseup', reloadGrid);
 
 function reloadGrid() {
@@ -24,11 +17,6 @@ function reloadGrid() {
         container.removeChild(container.lastChild);
     }
     startApp();
-}
-
-function startApp() {
-    createGrid();
-    draw();
 }
 
 function createGrid() {
@@ -71,6 +59,11 @@ function clearGrid() {
     cells.forEach(cell => {
         cell.style.backgroundColor = "transparent"
     })
+}
+
+function startApp() {
+    createGrid();
+    draw();
 }
 
 startApp();
