@@ -19,4 +19,5 @@ main {
 .cell {
     border-top: 1px solid #232323;
     border-left: 1px solid #232323;
+    user-select: none;
 }
