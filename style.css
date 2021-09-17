@@ -1,12 +1,77 @@
 * {
     margin: 0;
     padding: 0;
-    color: #556DC8;
+    color: #FFF;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: .75em;
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #232323;
+}
+
+#movie-bg {
+    position: fixed;
+    pointer-events: none;
+    /* -webkit-animation: movie 1s steps(4) infinite; */
+    animation: movie 1s steps(4) infinite;
+    background-image: url(https://bepatrickdavid.com/assets/img/movie.png);
+    height: 200%;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    opacity: .7;
+    z-index: -1;
+}
+
+@keyframes movie {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    10% {
+        -webkit-transform: translate(-5%, -5%);
+        transform: translate(-5%, -5%);
+    }
+    20% {
+        -webkit-transform: translate(-10%, 5%);
+        transform: translate(-10%, 5%);
+    }
+    30% {
+        -webkit-transform: translate(5%, -10%);
+        transform: translate(5%, -10%);
+    }
+    40% {
+        -webkit-transform: translate(-5%, 15%);
+        transform: translate(-5%, 15%);
+    }
+    50% {
+        -webkit-transform: translate(-10%, 5%);
+        transform: translate(-10%, 5%);
+    }
+    60% {
+        -webkit-transform: translate(15%, 0);
+        transform: translate(15%, 0);
+    }
+    70% {
+        -webkit-transform: translate(0, 10%);
+        transform: translate(0, 10%);
+    }
+    80% {
+        -webkit-transform: translate(-15%, 0);
+        transform: translate(-15%, 0);
+    }
+    90% {
+        -webkit-transform: translate(10%, 5%);
+        transform: translate(10%, 5%);
+    }
+    100% {
+        -webkit-transform: translate(5%, 0);
+        transform: translate(5%, 0);
+    }
 }
 
 main {
@@ -28,31 +93,29 @@ main {
 }
 
 button {
-    border: 1px solid #556DC8;
+    border: 1px solid #FFF;
     border-radius: 5px;
     padding: 1em 2em;
     width: 100%;
-    background-color: #FFF;
+    background-color: transparent;
     transition: all .3s ease-out;
 }
 
 button:hover {
     cursor: pointer;
     transform: scale(1.1);
-    background-color: #556DC8;
-    color: #FFF;
 }
 
 .container {
     display: grid;
-    border-right: 1px solid #556DC8;
-    border-bottom: 1px solid #556DC8;
+    border-right: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
     height: 600px;
     width: 600px;
 }
 
 .cell {
-    border-top: 1px solid #556DC8;
-    border-left: 1px solid #556DC8;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
     user-select: none;
 }
