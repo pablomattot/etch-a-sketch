@@ -16,8 +16,10 @@ function createGrid() {
 function draw() {
     const cells = Array.from(container.children);
     cells.forEach(cell => {
-        cell.addEventListener('mousedown', () => {
-            cell.style.backgroundColor = "#000";
+        cell.addEventListener('mouseover', (e) => {
+            if (e.buttons == 1 || e.buttons == 3) {
+                cell.style.backgroundColor = "#000";
+            }
         })
     })
 }
