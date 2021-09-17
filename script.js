@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const cellSize = 24;
 const gridSize = 16;
+const color = "000";
 
 function createGrid() {
     container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
@@ -15,13 +16,28 @@ function createGrid() {
 
 function draw() {
     const cells = Array.from(container.children);
+    drawClick(cells);
+    drawDrag(cells);
+}
+
+function drawClick(cells) {
+    cells.forEach(cell => {
+        cell.addEventListener('mousedown', () => {
+            cell.style.backgroundColor = `#${color}`;
+
+        })
+    })
+}
+
+function drawDrag(cells) {
     cells.forEach(cell => {
         cell.addEventListener('mouseover', (e) => {
-            if (e.buttons == 1 || e.buttons == 3) {
-                cell.style.backgroundColor = "#000";
+            if (e.buttons == 1) {
+                cell.style.backgroundColor = `#${color}`;
             }
         })
     })
 }
 
 createGrid();
+draw();
