@@ -2,6 +2,8 @@ const container = document.querySelector(".container");
 const cellSize = 24;
 const gridSize = 16;
 const color = "000";
+const clearBtn = document.querySelector("#clearBtn");
+clearBtn.addEventListener('click', clearGrid);
 
 function createGrid() {
     container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
@@ -36,6 +38,13 @@ function drawDrag(cells) {
                 cell.style.backgroundColor = `#${color}`;
             }
         })
+    })
+}
+
+function clearGrid() {
+    const cells = Array.from(container.children);
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "transparent"
     })
 }
 
