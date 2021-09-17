@@ -26,8 +26,7 @@ main {
     gap: 2em;
 }
 
-button,
-input {
+button {
     border: 1px solid #556DC8;
     border-radius: 5px;
     padding: 1em 2em;

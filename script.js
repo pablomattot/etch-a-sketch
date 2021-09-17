@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
-const gridSize = 32;
+const rangeVal = document.querySelector("#size");
+let gridSize = 24;
 const color = "000";
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener('click', clearGrid);
@@ -14,6 +15,21 @@ clearBtn.addEventListener('click', clearGrid);
 //         container.appendChild(cell);
 //     }
 // }
+
+rangeVal.addEventListener('mouseup', reloadGrid);
+
+function reloadGrid() {
+    gridSize = Number(rangeVal.value);
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+    startApp();
+}
+
+function startApp() {
+    createGrid();
+    draw();
+}
 
 function createGrid() {
     for (let i = 0; i < gridSize ** 2; i++) {
@@ -57,5 +73,4 @@ function clearGrid() {
     })
 }
 
-createGrid();
-draw();
+startApp();
